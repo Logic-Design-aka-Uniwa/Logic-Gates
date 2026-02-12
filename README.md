@@ -15,7 +15,7 @@
 </p>
 
 <h1 align="center" style="letter-spacing: 1px;">
-  Adders Deductors
+  Logic Gates
 </h1>
 
 <p align="center">
@@ -51,9 +51,7 @@
 
 # Project Overview
 
-This repository contains the documentation and implementation details for **Workshop 2** of the **Digital Design** course at the **University of West Attica**, Department of Informatics and Computer Engineering.
-
-The project focuses on the **theoretical analysis**, **simulation**, and **implementation** of basic arithmetic logic circuits used in digital systems.
+This README provides an overview of the **Digital Design Workshop 1** report submitted to the **University of West Attica**. The project focuses on the **theoretical study**, **simulation**, and **implementation** of fundamental logic gates.
 
 ---
 
@@ -61,180 +59,103 @@ The project focuses on the **theoretical analysis**, **simulation**, and **imple
 
 | Section | Folder/File | Description |
 |------:|-------------|-------------|
-| 1 | `assign/` | Assignment material for the Adders and Deductors workshop |
-| 1.1 | `assign/ASSIGNMENT 2.pdf` | Assignment description in English |
-| 1.2 | `assign/ΕΡΓΑΣΙΑ 2.pdf` | Assignment description in Greek |
-| 2 | `docs/` | Documentation covering adders and deductors theory and implementations |
-| 2.1 | `docs/Adders-Deductors.pdf` | English documentation for adders and deductors |
-| 2.2 | `docs/Αθροιστές-Αφαιρέτες.pdf` | Greek documentation for adders and deductors |
-| 3 | `multisim/` | Multisim circuit simulation files |
-| 3.1 | `multisim/semiAdder.ms14` | Half (semi) adder circuit simulation |
-| 3.2 | `multisim/fullAdder.ms14` | Full adder circuit simulation |
-| 3.3 | `multisim/semiDeductor.ms14` | Half (semi) subtractor circuit simulation |
-| 3.4 | `multisim/fullDeductor.ms14` | Full subtractor circuit simulation |
-| 3.5 | `multisim/adder4Bits.ms14` | 4-bit adder circuit simulation |
+| 1 | `assign/` | Assignment material for the Logic Gates workshop |
+| 1.1 | `assign/ASSIGNMENT 1.pdf` | Assignment description in English |
+| 1.2 | `assign/ΕΡΓΑΣΙΑ 1.pdf` | Assignment description in Greek |
+| 2 | `docs/` | Documentation covering logic gates theory and implementations |
+| 2.1 | `docs/Logic-Gates.pdf` | English documentation for logic gates |
+| 2.2 | `docs/Λογικές-Πύλες.pdf` | Greek documentation for logic gates |
+| 3 | `multisim/` | Multisim logic gate simulation files |
+| 3.1 | `multisim/AND.ms14` | AND gate simulation |
+| 3.2 | `multisim/NAND.ms14` | NAND gate simulation |
+| 3.3 | `multisim/NOR.ms14` | NOR gate simulation |
+| 3.4 | `multisim/NOT.ms14` | NOT gate simulation |
+| 3.5 | `multisim/OR.ms14` | OR gate simulation |
+| 3.6 | `multisim/propagationDelay.ms14` | Propagation delay demonstration circuit |
+| 3.7 | `multisim/XNOR.ms14` | XNOR gate simulation |
+| 3.8 | `multisim/XOR.ms14` | XOR gate simulation |
 | 4 | `README.md` | Repository overview and usage instructions |
 
 ---
 
-## Overview
+## Project Overview
 
-The workshop covers the design and operation of four fundamental digital circuits used for binary arithmetic:
+- **Institution:** University of West Attica  
+- **Department:** Information and Computer Engineering  
+- **Course:** Digital Design – Workshop 1  
+- **Student:** Athanasiou Vasileios Evangelos  
+- **Tools Used:** Multisim simulator for circuit design and analysis
 
-- **Half Adder**
-- **Half Subtractor**
-- **Full Adder**
-- **Full Subtractor**
+---
 
-For each circuit, the project includes:
+## Objectives
 
-- Truth tables  
-- Logical equations  
-- Multisim simulations  
-- Physical implementation descriptions  
+The main goal of this work is to demonstrate the operation of various logic gates using:
+
+- Truth tables
+- Logical equations
+- Simulated implementations
+
+The report covers:
+
+- **Basic Gates:** AND, OR, NOT
+- **Universal Gates:** NAND, NOR
+- **Exclusive Gates:** XOR, XNOR
+- **Advanced Analysis:** Propagation delay measurement using four AND gates connected in series with a 100 kHz square pulse.
+
+---
+
+## Technical Summary of Gates
+
+| Gate | Logic Equation | Behavior Summary |
+|------|----------------|------------------|
+| AND | F = A · B | Output is high only when both inputs are high. |
+| OR | F = A + B | Output is high if at least one input is high. |
+| NAND | F = ¬(A · B) | Inverted AND; output is low only when both inputs are high. |
+| NOR | F = ¬(A + B) | Inverted OR; output is high only when both inputs are low. |
+| XOR | F = A ⊕ B | Output is high only when inputs differ. |
+| XNOR | F = ¬(A ⊕ B) | Output is high when inputs are equal. |
 
 ---
 
 ## Implementation Details
 
-The circuits were designed and simulated using **NI Multisim**.
+The simulation environment uses the following components:
 
-### Components Used
+- **Logic "1":** Represented by VCC source (5V)
+- **Logic "0":** Represented by Ground (0V)
 
-- **Logic Gates:** AND, OR, NOR, NAND, XOR, XNOR, NOT
-- **Hardware Emulation Components:**
-  - VCC sources (5V)
-  - Ground connections
-  - Wires
-  - Lamps (2.5V)
-  - Switches
-- **Measurement Tools:**
-  - Oscilloscope for signal analysis
+### Visual Indicators
+- Lamps (2.5V) are used to indicate input and output states.
+- A lit lamp represents logic **1**.
+
+### Switching
+- Switches S1 and S2 toggle inputs between VCC and Ground.
 
 ---
 
-## Logic Levels
+## Report Structure
 
-| Logic State | Voltage Range |
-|--------------|--------------|
-| Logic **0** | 0V – 0.5V (Ground) |
-| Logic **1** | 2.7V – 5V (VCC) |
-
----
-
-## Circuit Specifications
-
-### 1. Half Adder
-
-The Half Adder calculates the **Sum (S)** and **Carry (C)** of two one-bit binary inputs **X** and **Y**.
-
-#### Logical Equations
-
-- Sum:
-  
-$$ 
-S = \overline{X}Y + X\overline{Y} = X \oplus Y 
-$$
-
-- Carry:
-  
-$$ 
-C = X \cdot Y 
-$$
-
-#### Truth Table
-
-| X | Y | S (Sum) | C (Carry) |
-|---|---|----------|-----------|
-| 0 | 0 | 0 | 0 |
-| 1 | 0 | 1 | 0 |
-| 0 | 1 | 1 | 0 |
-| 1 | 1 | 0 | 1 |
-
----
-
-### 2. Half Subtractor
-
-The Half Subtractor calculates the **Difference (D)** and **Borrow (B)** between two one-bit binary inputs **X** and **Y**.
-
-#### Logical Equations
-
-- Difference:
-  
-$$ 
-D = \overline{X}Y + X\overline{Y} = X \oplus Y 
-$$
-
-- Borrow:
-  
-$$ 
-B = \overline{X} \cdot Y 
-$$
-
-#### Truth Table
-
-| X | Y | D (Difference) | B (Borrow) |
-|---|---|----------------|------------|
-| 0 | 0 | 0 | 0 |
-| 1 | 0 | 1 | 0 |
-| 0 | 1 | 1 | 1 |
-| 1 | 1 | 0 | 0 |
-
----
-
-### 3. Full Adder
-
-The Full Adder calculates the sum of three one-bit inputs: **X**, **Y**, and **Carry-in (Cin)**.
-
-Outputs:
-
-- Sum (S)
-- Carry-out (Cout)
-
-Logical equations:
-
-$$
-S = X \oplus Y \oplus Cin 
-$$
-
-$$
-Cout = XY + Cin(X \oplus Y) 
-$$
-
----
-
-### 4. Full Subtractor
-
-The Full Subtractor performs subtraction including a **Borrow-in (Bin)** input.
-
-Outputs:
-
-- Difference (D)
-- Borrow-out (Bout)
-
-Logical equations:
-
-$$
-D = X \oplus Y \oplus Bin 
-$$
-
-$$
-Bout = \overline{X}Y + Bin(\overline{X} \oplus Y) 
-$$
+- **Chapter 1:** Introduction and basic gate operation
+- **Chapter 2:** Bibliography and references
+- **Chapter 3:** Multisim implementation and components description
+- **Chapter 4:** Exercises including truth tables, simulations, and propagation delay analysis
 
 ---
 
 ## Conclusion
 
-This workshop demonstrates the construction and operation of basic arithmetic circuits forming the foundation of **Arithmetic Logic Units (ALUs)** in modern processors. The simulations and implementations help reinforce understanding of binary arithmetic and digital circuit behavior.
+This workshop establishes a foundation in digital electronics by demonstrating how logic gates operate and how they can be analyzed through simulation, forming the basis for more advanced digital circuit design.
+
+---
 
 ---
 
 # Installation & Setup Guide
 
-This repository contains laboratory simulations and documentation for **Logic Design**, focusing on **Adders and Subtractors (Deductors)** used in digital arithmetic circuits.
+This repository contains laboratory simulations and documentation for **Digital Design – Workshop 1**, focusing on the behavior and implementation of **basic logic gates**.
 
-All simulations are implemented using **NI Multisim**.
+All circuit simulations are implemented using **NI Multisim**.
 
 ---
 
@@ -242,37 +163,38 @@ All simulations are implemented using **NI Multisim**.
 
 ### Required Software
 - **NI Multisim 14** or later  
-  Required to open and run `.ms14` circuit simulation files.
+  Required to open and run `.ms14` simulation files.
 
-  Download:  
-  https://www.ni.com/en-us/shop/electronic-test-instrumentation/application-software-for-electronic-test-and-instrumentation-category/what-is-multisim.html
+Download from:  
+https://www.ni.com/en-us/shop/electronic-test-instrumentation/application-software-for-electronic-test-and-instrumentation-category/what-is-multisim.html
+
+---
 
 ### Optional Software
-- **PDF Viewer** (Adobe Reader, browser viewer, etc.)  
-  Used to open:
-  - `Adders-Deductors.pdf`
-  - `Αθροιστές-Αφαιρέτες.pdf`
-
-- **Git** (optional, for cloning the repository)
+- **PDF Viewer** to open workshop documentation.
+- **Git** for cloning the repository.
 
 ---
 
 ## Installation Steps
 
 ### 1. Clone the Repository
-Clone the repository using Git:
+
+Clone using Git:
 
 ```bash
-git clone https://github.com/Logic-Design-aka-Uniwa/Adders-Deductors.git
+git clone https://github.com/Logic-Design-aka-Uniwa/Logic-Gates.git
 ```
 
-Or download the project as a ZIP file and extract it manually.
+Alternatively, download the repository as a ZIP file and extract it locally.
 
 ### 2. Navigate to Project Directory
 ```bash
-cd Adders-Deductors
+cd Logic-Gates
 ```
-Ensure the following folder structure exists:
+
+Ensure the following structure exists:
+
 ```bash
 assign/
 docs/
@@ -280,42 +202,38 @@ multisim/
 README.md
 ```
 
---- 
+---
 
 ## Multisim Simulation Files
-The repository includes simulation files for the main arithmetic circuits:
+The repository includes simulation files demonstrating the operation of logic gates.
+Typical circuits include implementations of:
 
-| File | Description |
-|------|-------------|
-| `multisim/semiAdder.ms14` | Half Adder simulation |
-| `multisim/fullAdder.ms14` | Full Adder simulation |
-| `multisim/semiDeductor.ms14` | Half Subtractor simulation |
-| `multisim/fullDeductor.ms14` | Full Subtractor simulation |
-| `multisim/adder4Bits.ms14` | 4-bit Adder simulation |
-
+| Gate Type               | Description                         |
+|-------------------------|-------------------------------------|
+| AND                     | Logical multiplication               |
+| OR                      | Logical addition                     |
+| NOT                     | Signal inversion                     |
+| NAND                    | Universal gate                       |
+| NOR                     | Universal gate                       |
+| XOR                     | Exclusive OR                         |
+| XNOR                    | Exclusive NOR                        |
+| Propagation Delay Circuit | Four AND gates in series for timing analysis |
 
 ### 3. Open a Simulation in Multisim
 1. Launch **NI Multisim**.
 2. Select **File** → **Open**.
 3. Navigate to the repository folder.
 4. Open the `multisim/` directory.
-5. Select a `.ms14` file.
+5. Select the desired `.ms14` file.
 6. Wait for the circuit to load.
-7. Run the simulation using the Run button.
+7. Press Run to start simulation.
 
 ---
 
-## Open the Documentation
+## Opening the Documentation
 1. Navigate to the `docs/` folder.
-2. Open the preferred documentation:
-
-| Language | File |
-|----------|------|
-| English | `docs/Adders-Deductors.pdf` |
-| Greek | `docs/Αθροιστές-Αφαιρέτες.pdf` |
-
-These documents include:
-- Circuit theory
-- Truth tables
-- Logical equations
-- Implementation details
+2. Open the available documentation file(s) to review:
+    - Gate theory
+    - Truth tables
+    - Simulation analysis
+    - Propagation delay experiments

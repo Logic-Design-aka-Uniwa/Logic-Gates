@@ -149,8 +149,6 @@ This workshop establishes a foundation in digital electronics by demonstrating h
 
 ---
 
----
-
 # Installation & Setup Guide
 
 This repository contains laboratory simulations and documentation for **Digital Design – Workshop 1**, focusing on the behavior and implementation of **basic logic gates**.

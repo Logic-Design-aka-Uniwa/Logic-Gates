@@ -86,105 +86,95 @@
 
 ---
 
-# README
+# INSTALL
 
 ## Logic Gates
 
-This README provides an overview of the **Digital Design Workshop 1** report submitted to the **University of West Attica**. The project focuses on the **theoretical study**, **simulation**, and **implementation** of fundamental logic gates.
+This repository contains laboratory simulations and documentation for **Digital Design – Workshop 1**, focusing on the behavior and implementation of **basic logic gates**.
+
+All circuit simulations are implemented using **NI Multisim**.
 
 ---
 
-## Table of Contents
+## 1. Prerequisites
 
-| Section | Folder/File                      | Description                                                   |
-| ------: | -------------------------------- | ------------------------------------------------------------- |
-|       1 | `assign/`                        | Assignment material for the Logic Gates workshop              |
-|     1.1 | `assign/ASSIGNMENT 1.pdf`        | Assignment description in English                             |
-|     1.2 | `assign/ΕΡΓΑΣΙΑ 1.pdf`           | Assignment description in Greek                               |
-|       2 | `docs/`                          | Documentation covering logic gates theory and implementations |
-|     2.1 | `docs/Logic-Gates.pdf`           | English documentation for logic gates                         |
-|     2.2 | `docs/Λογικές-Πύλες.pdf`         | Greek documentation for logic gates                           |
-|       3 | `multisim/`                      | Multisim logic gate simulation files                          |
-|     3.1 | `multisim/AND.ms14`              | AND gate simulation                                           |
-|     3.2 | `multisim/NAND.ms14`             | NAND gate simulation                                          |
-|     3.3 | `multisim/NOR.ms14`              | NOR gate simulation                                           |
-|     3.4 | `multisim/NOT.ms14`              | NOT gate simulation                                           |
-|     3.5 | `multisim/OR.ms14`               | OR gate simulation                                            |
-|     3.6 | `multisim/propagationDelay.ms14` | Propagation delay demonstration circuit                       |
-|     3.7 | `multisim/XNOR.ms14`             | XNOR gate simulation                                          |
-|     3.8 | `multisim/XOR.ms14`              | XOR gate simulation                                           |
-|       4 | `README.md`                      | Project documentation                                         |
-|       5 | `INSTALL.md`                     | Usage instructions                                            |
+### 1.1 Required Software
+
+- **NI Multisim 14** or later  
+  Required to open and run `.ms14` simulation files.
+
+Download from:  
+https://www.ni.com/en-us/shop/electronic-test-instrumentation/application-software-for-electronic-test-and-instrumentation-category/what-is-multisim.html
+
+### 1.2 Optional Software
+
+- **PDF Viewer** to open workshop documentation.
+- **Git** for cloning the repository.
 
 ---
 
-## 1. Project Overview
+## 2. Installation Steps
 
-- **Institution:** University of West Attica
-- **Department:** Information and Computer Engineering
-- **Course:** Digital Design – Workshop 1
-- **Student:** Athanasiou Vasileios Evangelos
-- **Tools Used:** Multisim simulator for circuit design and analysis
+### 2.1 Clone the Repository
 
----
+Clone using Git:
 
-## 2. Objectives
+```bash
+git clone https://github.com/Logic-Design-aka-Uniwa/Logic-Gates.git
+```
 
-The main goal of this work is to demonstrate the operation of various logic gates using:
+Alternatively, download the repository as a ZIP file and extract it locally.
 
-- Truth tables
-- Logical equations
-- Simulated implementations
+### 2.2 Navigate to Project Directory
 
-The report covers:
+```bash
+cd Logic-Gates
+```
 
-- **Basic Gates:** AND, OR, NOT
-- **Universal Gates:** NAND, NOR
-- **Exclusive Gates:** XOR, XNOR
-- **Advanced Analysis:** Propagation delay measurement using four AND gates connected in series with a 100 kHz square pulse.
+Ensure the following structure exists:
 
----
-
-## 3. Technical Summary of Gates
-
-| Gate | Logic Equation | Behavior Summary                                            |
-| ---- | -------------- | ----------------------------------------------------------- |
-| AND  | F = A · B      | Output is high only when both inputs are high.              |
-| OR   | F = A + B      | Output is high if at least one input is high.               |
-| NAND | F = ¬(A · B)   | Inverted AND; output is low only when both inputs are high. |
-| NOR  | F = ¬(A + B)   | Inverted OR; output is high only when both inputs are low.  |
-| XOR  | F = A ⊕ B      | Output is high only when inputs differ.                     |
-| XNOR | F = ¬(A ⊕ B)   | Output is high when inputs are equal.                       |
+```bash
+assign/
+docs/
+multisim/
+README.md
+```
 
 ---
 
-## 4. Implementation Details
+## 3. Multisim Simulation Files
 
-The simulation environment uses the following components:
+The repository includes simulation files demonstrating the operation of logic gates.
+Typical circuits include implementations of:
 
-- **Logic "1":** Represented by VCC source (5V)
-- **Logic "0":** Represented by Ground (0V)
+| Gate Type                 | Description                                  |
+| ------------------------- | -------------------------------------------- |
+| AND                       | Logical multiplication                       |
+| OR                        | Logical addition                             |
+| NOT                       | Signal inversion                             |
+| NAND                      | Universal gate                               |
+| NOR                       | Universal gate                               |
+| XOR                       | Exclusive OR                                 |
+| XNOR                      | Exclusive NOR                                |
+| Propagation Delay Circuit | Four AND gates in series for timing analysis |
 
-### 4.1 Visual Indicators
+### 3.1 Open a Simulation in Multisim
 
-- Lamps (2.5V) are used to indicate input and output states.
-- A lit lamp represents logic **1**.
-
-### 4.2 Switching
-
-- Switches S1 and S2 toggle inputs between VCC and Ground.
+1. Launch **NI Multisim**.
+2. Select **File** → **Open**.
+3. Navigate to the repository folder.
+4. Open the `multisim/` directory.
+5. Select the desired `.ms14` file.
+6. Wait for the circuit to load.
+7. Press Run to start simulation.
 
 ---
 
-## 5. Report Structure
+## 4. Opening the Documentation
 
-- **Chapter 1:** Introduction and basic gate operation
-- **Chapter 2:** Bibliography and references
-- **Chapter 3:** Multisim implementation and components description
-- **Chapter 4:** Exercises including truth tables, simulations, and propagation delay analysis
-
----
-
-## 6. Conclusion
-
-This workshop establishes a foundation in digital electronics by demonstrating how logic gates operate and how they can be analyzed through simulation, forming the basis for more advanced digital circuit design.
+1. Navigate to the `docs/` folder.
+2. Open the available documentation file(s) to review:
+   - Gate theory
+   - Truth tables
+   - Simulation analysis
+   - Propagation delay experiments
